@@ -1,0 +1,157 @@
+<html>
+  <head>
+    <script type="text/javascript" src="render.js"></script>
+    <script type="text/javascript" src="reset_selection.js"></script>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="click_element.js"></script>
+    <script type="text/javascript" src="give_up.js"></script>
+    <link rel="stylesheet" href="index.css" />
+    <title>GRE Words Champion</title>
+    <h1 id="champion">GRE Words Champion</h1>
+    <div id="head-wrap">
+      <div id="diff-wrap">
+        <h4 id="diff1">Difficulty :</h4>
+        <h4 id="diff2"></h4>
+      </div>
+      <div id="score-wrap">
+        <h4 id="score1">Score :</h4>
+        <h4 id="score2"></h4>
+      </div>
+    </div>
+
+    <div id="hints" style="width: 1000px">
+      <div id="hint-head"></div>
+      <div id="wrap1">
+        <div id="hint1"></div>
+        <div id="ans1"></div>
+      </div>
+      <div id="wrap2">
+        <div id="hint2"></div>
+        <div id="ans2"></div>
+      </div>
+      <div id="wrap3">
+        <div id="hint3"></div>
+        <div id="ans3"></div>
+      </div>
+    </div>
+  </head>
+  
+  <div class="instructions" id="instructions">
+    <div id="ins">
+      <h2 style="text-align: center">Instructions</h4>
+        <div id="text-ins">
+          <div style="color:red;text-decoration:bold;">This is just a student project. This work is not related to ETS (creators of the GRE) in any way.</div>
+        1. This game testes your knowledge of vocab necessary for the vocab section of the GRE.<br/>
+        2. Choose letters to make up a word that has the same meaning as one of the hints.<br/>
+        3. Guess right all the three words to move ahead.<br/>
+        4. If you selected the wrong letter, click on "Reset Selection".<br/>
+        5. To reset the game, click on restart game.<br/>
+        6. If you cannot guess all te three words, then click on "give up".<br/>
+        7. "Restart game" and "give up" will reset your score to zero(0).<br/>
+        8. You get 10, 25, 50 points for each "easy", "medium" and "hard" word guessed right.<br/>
+        9. If you answer all three words for a given difficulty, then you move ahead to the next difficulty.<br/>
+        10. If you give up, you move down by one difficulty level.<br/>
+        </div>
+      <button
+      id="ins-button"
+        onclick='document.getElementById("instructions").style.display="none";localStorage.setItem("score",0);render()'
+      >
+        Continue
+      </button>
+    </div>
+  </div>
+  <div class="word-done" id="word-done">
+    <div id="wdone">
+      <div id="wdone-text">
+        <h4 id="wfound-title" style="text-align: center">Word found</h4>
+          <div id="found-word"></div>
+        <button
+          onclick='document.getElementById("word-done").style.display="none"'
+          id="found-button"
+        >
+          Continue
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="level-done" id="level-done">
+    <div id="ldone">
+      <div id="level-done-text">
+        <h4 id="level-done-title" style="text-align: center;color:green;"><i>Level Up</i></h4>
+          
+        <button
+          onclick='document.getElementById("level-done").style.display="none"'
+          id="found-button"
+        >
+          Continue
+        </button>
+      </div>
+    </div>
+  </div>
+    <div class="restart-confirm" id="restart-confirm">
+    <div id="restartconfirm">
+      <div id="restart-confirm-text">
+        <h4 id="restart-confirm-title" style="text-align: center;color:red;"><i>!!!ALERT!!!</i></h4>
+          This will reset your progress and score.<br/>
+        <button
+          onclick='document.getElementById("restart-confirm").style.display="none";localStorage.setItem("score",0);render()'
+          id="confirm-button"
+        >
+          Restart
+        </button>
+        <button
+          onclick='document.getElementById("restart-confirm").style.display="none"'
+          id="cancel-button"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+    <div class="giveup-confirm" id="giveup-confirm">
+    <div id="giveupconfirm">
+      <div id="restart-confirm-text">
+        <h4 id="giveup-confirm-title" style="text-align: center;color:red;"><i>!!!ALERT!!!</i></h4>
+          This will reset your progress and score.<br/>
+        <button
+          onclick='document.getElementById("giveup-confirm").style.display="none";give_up()'
+          id="confirm-button"
+        >
+          GiveUp
+        </button>
+        <button
+          onclick='document.getElementById("giveup-confirm").style.display="none"'
+          id="cancel-button"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+  <body>
+    <div id="table"></div>
+    <br />
+    <div id="select-wrap">
+      <div id="last-wrap">
+      <div id="s1">Selected Text&nbsp;&nbsp;:&nbsp;&nbsp;</div>
+      <div id="selected" selected>None</div>
+      </div>
+      
+    </div>
+    <div id="buttons">
+      <button id="b1" onclick='document.getElementById("restart-confirm").style.display="block"'>Restart Game</button>
+      <button
+      id="b3"
+        onclick="reset_selection()"
+        style="width: 150px; margin-bottom: 10px"
+      >
+        Reset Selection
+      </button>
+      <button id="b2"  style="display:none"  onclick='document.getElementById("giveup-confirm").style.display="block"'>Give Up</button>
+      <button id="b4" onclick='document.getElementById("instructions").style.display="block"'>Show Instructions</button>
+    </div>
+  </body>
+</html>
