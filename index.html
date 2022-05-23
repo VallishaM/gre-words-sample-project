@@ -121,7 +121,7 @@
         <h4 id="restart-confirm-title" style="text-align: center;color:red;"><i>!!!ALERT!!!</i></h4>
           This will reset your progress and score.<br/>
         <button
-          onclick='document.getElementById("restart-confirm").style.display="none";localStorage.setItem("score",0);render()'
+          onclick='document.getElementById("restart-confirm").style.display="none";localStorage.clear();render()'
           id="confirm-button"
         >
           Restart
