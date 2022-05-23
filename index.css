@@ -24,6 +24,7 @@ table {
   font-size: 30px;
 }
 #select-wrap {
+  margin-left: 25px;
   display: none;
 }
 td {
