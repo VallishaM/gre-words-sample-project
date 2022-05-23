@@ -75,7 +75,7 @@ button {
   float: left; /* add this */
 }
 #buttons {
-  margin-left: -100px;
+  margin-left: -150px;
   margin-top: 20px;
   width: 1000px;
   overflow: hidden; /* add this to contain floated children */
@@ -84,7 +84,7 @@ button {
   font-size: 15px;
   border-radius: 5px;
   height: 30px;
-  width: 150px;
+  width: 120px;
   float: left; /* add this */
 }
 #b4 {
