@@ -224,6 +224,34 @@ table {
   margin-left: 20px;
   margin-right: 20px;
 }
+#instructions1 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  background: rgba(255, 255, 255, 0.839);
+}
+#ins1 {
+  font-size: 20px;
+  width: 700px;
+  height: 550px;
+  border: 3px solid black;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+}
+#text-ins1 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
 button:hover {
   cursor: pointer;
   background-color: gray;
