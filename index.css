@@ -73,6 +73,7 @@ button {
   float: left; /* add this */
 }
 #buttons {
+  margin-left: -100px;
   margin-top: 20px;
   width: 1000px;
   overflow: hidden; /* add this to contain floated children */
